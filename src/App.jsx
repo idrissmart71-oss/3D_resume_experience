@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CinematicExperience from './components/CinematicExperience';
+import CinematicExperience from './components/Cinematicexperience';
 import './App.css';
 
 function App() {

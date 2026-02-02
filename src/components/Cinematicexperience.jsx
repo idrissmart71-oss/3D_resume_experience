@@ -12,7 +12,7 @@ import {
 } from '@react-three/drei';
 import { EffectComposer, Bloom, DepthOfField, Vignette, ChromaticAberration } from '@react-three/postprocessing';
 import * as THREE from 'three';
-import './CinematicExperience.css';
+import './Cinematicexperience.css';
 
 // ═══════════════════════════════════════════════════════════
 // CINEMATIC TIMELINE — Like a movie trailer
