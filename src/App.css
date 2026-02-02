@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;600;700;900&family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.app-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EPIC INTRO SCREEN — Assassin's Creed Style
+   ═══════════════════════════════════════════════════════════ */
+
+.epic-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: introFade 1s ease-in;
+}
+
+@keyframes introFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.logo-reveal {
+  text-align: center;
+  animation: logoAppear 2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes logoAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.studio-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  font-weight: 300;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 20px;
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% { text-shadow: 0 0 5px rgba(255,255,255,0.1); }
+  50% { text-shadow: 0 0 15px rgba(255,255,255,0.3); }
+}
+
+.main-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.char-name, .char-surname {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 7em;
+  letter-spacing: 15px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #ffffff 0%, #c9c9c9 50%, #8a8a8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  animation: titleReveal 1.5s 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.char-surname {
+  animation-delay: 0.8s;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    letter-spacing: 50px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 15px;
+  }
+}
+
+.subtitle-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1em;
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-top: 30px;
+  animation: subtitleFade 1s 1.5s ease both;
+}
+
+@keyframes subtitleFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.begin-experience {
+  margin-top: 80px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.4em;
+  letter-spacing: 4px;
+  color: #fff;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 18px 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+  animation: btnAppear 1s 2s ease both;
+}
+
+@keyframes btnAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.begin-experience::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.6s;
+}
+
+.begin-experience:hover::before {
+  left: 100%;
+}
+
+.begin-experience:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+.btn-icon {
+  font-size: 0.9em;
+}
+
+.intro-footer {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  gap: 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  animation: footerFade 1s 2.5s ease both;
+}
+
+@keyframes footerFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MINIMAL UI OVERLAY — During Cinematic
+   ═══════════════════════════════════════════════════════════ */
+
+.minimal-ui {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+  animation: uiFadeIn 1s ease;
+}
+
+@keyframes uiFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+}
+
+.character-info {
+  font-family: 'Bebas Neue', cursive;
+  text-align: left;
+}
+
+.role {
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.company {
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 2px;
+}
+
+.contact-quick {
+  pointer-events: all;
+}
+
+.contact-link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.contact-link:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255,255,255,0.05);
+}
+
+.bottom-controls {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+}
+
+.stage-indicator {
+  position: relative;
+}
+
+.indicator-line {
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.15);
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.stage-dots {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.4);
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.dot::after {
+  content: attr(data-stage);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dot:hover::after {
+  opacity: 1;
+}
+
+.dot.active {
+  background: #fff;
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.6);
+  transform: scale(1.5);
+}
+
+.dot.active::after {
+  color: #fff;
+  opacity: 1;
+}
+
+.skip-info {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.3);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .char-name, .char-surname {
+    font-size: 3.5em;
+    letter-spacing: 8px;
+  }
+  
+  .subtitle-text {
+    font-size: 0.85em;
+  }
+  
+  .begin-experience {
+    font-size: 1.1em;
+    padding: 14px 35px;
+  }
+  
+  .bottom-controls {
+    width: 90%;
+  }
+  
+  .top-bar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+}
